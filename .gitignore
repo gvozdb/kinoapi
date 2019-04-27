@@ -23,3 +23,7 @@ coverage
 # ESLint
 #
 /.eslintcache
+
+# PHPStorm
+#
+.idea
