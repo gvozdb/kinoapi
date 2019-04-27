@@ -2,10 +2,10 @@
   "name": "kinoapi",
   "version": "0.15.0-beta",
   "description": "Get info for movies and TV shows",
-  "repository": "yenbekbay/movie-api",
-  "homepage": "https://github.com/yenbekbay/movie-api#readme",
+  "repository": "gvozdb/kinoapi",
+  "homepage": "https://github.com/gvozdb/kinoapi#readme",
   "bugs": {
-    "url": "https://github.com/yenbekbay/movie-api/issues"
+    "url": "https://github.com/gvozdb/kinoapi/issues"
   },
   "license": "MIT",
   "author": {
@@ -17,7 +17,9 @@
     "node": ">=6.0.0"
   },
   "main": "lib/index.js",
-  "files": ["lib/"],
+  "files": [
+    "lib/"
+  ],
   "scripts": {
     "sync-types": "flow-typed install --overwrite --skip",
     "typecheck": "flow .",
@@ -38,14 +40,28 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "lint-staged": {
-    "{*.js,{scripts,src}/**/*.js}": ["eslint --cache --fix", "git add"],
-    "{*.json,.vscode/*.json}": ["prettier --write", "git add"]
+    "{*.js,{scripts,src}/**/*.js}": [
+      "eslint --cache --fix",
+      "git add"
+    ],
+    "{*.json,.vscode/*.json}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.js"],
-    "coverageReporters": ["lcov"],
-    "roots": ["<rootDir>/src"],
-    "setupFiles": ["<rootDir>/jest.setup.js"],
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageReporters": [
+      "lcov"
+    ],
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ],
     "testEnvironment": "node",
     "testRegex": "/__tests__/.*-test\\.js$"
   },

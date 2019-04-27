@@ -1,10 +1,10 @@
-# movie-api
+# kinoapi
 
-[![Version](https://img.shields.io/npm/v/movie-api.svg)](http://npm.im/movie-api)
-[![Build Status](https://img.shields.io/travis/yenbekbay/movie-api.svg)](https://travis-ci.org/yenbekbay/movie-api)
-[![Coverage Status](https://img.shields.io/codecov/c/github/yenbekbay/movie-api.svg)](https://codecov.io/gh/yenbekbay/movie-api)
-[![Dependency Status](https://img.shields.io/david/yenbekbay/movie-api.svg)](https://david-dm.org/yenbekbay/movie-api)
-[![devDependency Status](https://img.shields.io/david/dev/yenbekbay/movie-api.svg)](https://david-dm.org/yenbekbay/movie-api?type=dev)
+[![Version](https://img.shields.io/npm/v/kinoapi.svg)](http://npm.im/kinoapi)
+[![Build Status](https://img.shields.io/travis/gvozdb/kinoapi.svg)](https://travis-ci.org/gvozdb/kinoapi)
+[![Coverage Status](https://img.shields.io/codecov/c/github/gvozdb/kinoapi.svg)](https://codecov.io/gh/gvozdb/kinoapi)
+[![Dependency Status](https://img.shields.io/david/gvozdb/kinoapi.svg)](https://david-dm.org/gvozdb/kinoapi)
+[![devDependency Status](https://img.shields.io/david/dev/gvozdb/kinoapi.svg)](https://david-dm.org/gvozdb/kinoapi?type=dev)
 
 > Get info for movies and TV shows
 
@@ -25,9 +25,9 @@ Supported sources: [Kinopoisk](https://kinopoisk.ru), [TMDB](https://www.themovi
 ## Installation
 
 ```bash
-$ yarn add movie-api
+$ yarn add kinoapi
 # or
-$ npm install movie-api --save
+$ npm install kinoapi --save
 ```
 
 ## Usage
@@ -37,7 +37,7 @@ The following examples assume that you have a working ES2016 environment with su
 #### Kinopoisk example
 
 ```js
-import {Kinopoisk} from 'movie-api';
+import {Kinopoisk} from 'kinoapi';
 
 const kp = new Kinopoisk();
 
@@ -160,7 +160,7 @@ const kp = new Kinopoisk();
 #### TMDB example
 
 ```js
-import {Tmdb} from 'movie-api';
+import {Tmdb} from 'kinoapi';
 
 const tmdb = new Tmdb({
   apiKey: process.env.TMDB_API_KEY, // required, refer to https://www.themoviedb.org/faq/api
@@ -293,7 +293,7 @@ const tmdb = new Tmdb({
 #### IMDB example
 
 ```js
-import {Imdb} from 'movie-api';
+import {Imdb} from 'kinoapi';
 
 const imdb = new Imdb({
   userId: process.env.IMDB_USER_ID, // required, extract from your profile page url (should be in the following format: urXXXXXXXX)
@@ -315,7 +315,7 @@ const imdb = new Imdb({
 #### Trakt example
 
 ```js
-import {Trakt} from 'movie-api';
+import {Trakt} from 'kinoapi';
 
 const trakt = new Trakt({
   apiKey: process.env.TRAKT_API_KEY, // required, refer to http://docs.trakt.apiary.io

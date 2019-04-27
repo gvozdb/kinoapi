@@ -13,7 +13,7 @@ const getUserAgent = () => {
     if (parentPkg.name) return parentPkg.name;
   }
 
-  return 'movie-api';
+  return 'kinoapi';
 };
 
 const applyQueryToUrl = (url: string, query: {[key: string]: mixed} = {}) =>
