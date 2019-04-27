@@ -12,8 +12,8 @@ const filmInfoFromRes = (res: KinopoiskApi$GetFilmResponse) => {
 
   return {
     kpId: parseInt(res.filmID, 10),
-    title: res.nameRU || null,
-    originalTitle: res.nameEN || null,
+    title: res.nameRU || '',
+    originalTitle: res.nameEN || '',
     posterUrl: res.posterURL ? imageUrlFromPath(res.posterURL) : null,
     year: parseInt(res.year, 10),
     productionCountries: (res.country || '')

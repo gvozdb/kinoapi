@@ -53,7 +53,7 @@ const getResults = (
   res.searchFilms.map(film => ({
     id: parseInt(film.id, 10),
     title: film.nameRU,
-    originalTitle: film.nameEN,
+    originalTitle: film.nameEN || '',
     countries: (film.country || '').split(','),
     year: parseInt(film.year, 10),
   }));

@@ -22,7 +22,7 @@ const soonFilmListFromRes = ({
         return {
           kpId: parseInt(item.id, 10),
           title: item.nameRU,
-          originalTitle: item.nameEN,
+          originalTitle: item.nameEN || '',
           posterUrl: item.posterURL ? imageUrlFromPath(item.posterURL) : null,
           year: parseInt(item.year, 10),
           productionCountries: (item.country || '')

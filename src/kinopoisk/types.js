@@ -36,35 +36,10 @@ export type KinopoiskApi$GetSearchInFilmsItem = {
   rating?: ?string,
   ratingVoteCount?: ?string,
 };
-export type KinopoiskApi$FilmsListItem = {
-  type: KinopoiskApi$MovieType,
-  id: string,
-  nameRU: string,
-  nameEN?: ?string,
-  year?: ?string,
-  rating?: ?string,
-  ratingVoteCount?: ?string,
-  posterURL?: ?string,
-  filmLength?: ?string,
-  country?: ?string,
-  genre?: ?string,
-  filmTypeText: 'Похожие фильмы',
-};
-export type KinopoiskApi$GetSoonFilmsItem = {
-  id: string,
-  type: KinopoiskApi$MovieType,
-  nameRU: string,
-  nameEN?: ?string,
-  description?: ?string,
-  posterURL?: ?string,
-  filmLength?: ?string,
-  year?: ?string,
-  country?: ?string,
-  genre?: ?string,
-  rating?: ?string,
-  ratingVoteCount?: ?string,
-  premiereRU?: string,
-};
+
+/**
+ *
+ */
 export type KinopoiskApi$Country = {
   countryID: string,
   countryName: string,
@@ -83,6 +58,10 @@ export type KinopoiskApi$Cinema = {
   metro?: ?string,
   hasNoSeances?: boolean,
 };
+
+/**
+ *
+ */
 export type KinopoiskApi$Showtime = {
   time: string,
   formats: {format: Array<string>},
@@ -101,13 +80,24 @@ export type KinopoiskApi$MovieShowtimes = {
   seance: Array<KinopoiskApi$Showtime>,
 };
 
+/**
+ *
+ */
 export type KinopoiskApi$GetSearchInFilmsResponse = {
   class: 'KPSearchInFilms',
   searchFilms: Array<KinopoiskApi$GetSearchInFilmsItem>,
 };
+
+/**
+ *
+ */
 export type KinopoiskApi$GetStaffResponse = {
   creators?: Array<Array<KinopoiskApi$CrewMember>>,
 };
+
+/**
+ *
+ */
 export type KinopoiskApi$GetFilmResponse = {
   bigPosterURL?: ?string,
   country?: ?string,
@@ -127,6 +117,10 @@ export type KinopoiskApi$GetFilmResponse = {
   webURL: string,
   year?: ?string,
 };
+
+/**
+ *
+ */
 export type KinopoiskApi$GetGalleryResponse = {
   class: 'Gallery',
   gallery?: {
@@ -135,14 +129,76 @@ export type KinopoiskApi$GetGalleryResponse = {
     poster?: Array<KinopoiskApi$GalleryItem>,
   },
 };
+
+/**
+ *
+ */
+export type KinopoiskApi$FilmsListItem = {
+  type: KinopoiskApi$MovieType,
+  id: string,
+  nameRU: string,
+  nameEN?: ?string,
+  year?: ?string,
+  rating?: ?string,
+  ratingVoteCount?: ?string,
+  posterURL?: ?string,
+  filmLength?: ?string,
+  country?: ?string,
+  genre?: ?string,
+  filmTypeText: 'Похожие фильмы',
+};
 export type KinopoiskApi$GetFilmsListResponse = {
   class: 'KPFilmsList',
   items?: Array<KinopoiskApi$FilmsListItem>,
+};
+
+/**
+ *
+ */
+export type KinopoiskApi$NavigatorFilmsItem = {
+  id: string,
+  type: KinopoiskApi$MovieType,
+  nameRU: string,
+  nameEN?: ?string,
+  posterURL?: ?string,
+  year?: ?string,
+  country?: ?string,
+  genre?: ?string,
+  rating?: ?string,
+  ratingVoteCount?: ?string,
+};
+export type KinopoiskApi$GetNavigatorFilmsResponse = {
+  class: 'navigator',
+  items?: Array<KinopoiskApi$NavigatorFilmsItem>,
+  pagesCount?: number,
+};
+
+/**
+ *
+ */
+export type KinopoiskApi$GetSoonFilmsItem = {
+  id: string,
+  type: KinopoiskApi$MovieType,
+  nameRU: string,
+  nameEN?: ?string,
+  description?: ?string,
+  posterURL?: ?string,
+  filmLength?: ?string,
+  year?: ?string,
+  country?: ?string,
+  genre?: ?string,
+  rating?: ?string,
+  ratingVoteCount?: ?string,
+  premiereRU?: string,
 };
 export type KinopoiskApi$GetSoonFilmsResponse = {
   class: 'KPSoonFilms',
   previewFilms?: Array<Array<KinopoiskApi$GetSoonFilmsItem>>,
 };
+
+/**
+ *
+ */
 export type KinopoiskApi$GetCountryViewResponse = {
   class: 'KPCountryView',
   countryData: Array<KinopoiskApi$Country>,

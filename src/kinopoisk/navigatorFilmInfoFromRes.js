@@ -1,15 +1,29 @@
 /* @flow */
 
-import {imageUrlFromPath, parseRuntime} from './utils';
+import {imageUrlFromPath} from './utils';
 import type {
-  KinopoiskApi$FilmsListItem,
-  KinopoiskApi$GetFilmsListResponse,
+  KinopoiskApi$NavigatorFilmsItem,
+  KinopoiskApi$GetNavigatorFilmsResponse,
 } from './types';
 
-const filmInfoListFromRes = ({
+export type NavigatorQuery = {
+  type?: string,
+  years?: string,
+  rating?: string,
+  order?: string,
+  // year?: number,
+  // countries?: Array<string>,
+  // isTvShow?: boolean,
+};
+
+const navigatorFilmInfoFromRes = ({
   items = [],
-}: KinopoiskApi$GetFilmsListResponse) => ({
-  items: items.map((item: KinopoiskApi$FilmsListItem) => ({
+  pagesCount = 1,
+}: {
+  items: KinopoiskApi$GetNavigatorFilmsResponse,
+  pagesCount: number,
+}) => ({
+  items: items.map((item: KinopoiskApi$NavigatorFilmsItem) => ({
     kpId: parseInt(item.id, 10),
     title: item.nameRU,
     originalTitle: item.nameEN || '',
@@ -18,7 +32,6 @@ const filmInfoListFromRes = ({
     productionCountries: (item.country || '')
       .split(', ')
       .map((country: string) => country.trim()),
-    runtime: parseRuntime(item.filmLength),
     genres: (item.genre || '').split(', '),
     kpRating: parseFloat(item.rating),
     kpRatingVoteCount: parseInt(
@@ -26,6 +39,7 @@ const filmInfoListFromRes = ({
       10,
     ),
   })),
+  pages: pagesCount,
 });
 
-export default filmInfoListFromRes;
+export default navigatorFilmInfoFromRes;

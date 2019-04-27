@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.15.2"></a>
+## 0.15.2 (2019-04-27)
+
+
+### Features
+
+* **kinopoisk:** add `getNavigatorFilms`
+
+
+
 <a name="0.15.1"></a>
 ## 0.15.1-beta (2019-04-27)
 

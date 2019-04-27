@@ -6,6 +6,7 @@ import filmGalleryFromRes from './filmGalleryFromRes';
 import filmIdFromRes from './filmIdFromRes';
 import filmInfoFromRes from './filmInfoFromRes';
 import filmInfoListFromRes from './filmInfoListFromRes';
+import navigatorFilmInfoFromRes from './navigatorFilmInfoFromRes';
 import soonFilmListFromRes from './soonFilmInfoFromRes';
 import KinopoiskConnector from './connector';
 import type {
@@ -18,12 +19,14 @@ import type {
   KinopoiskApi$GetCountryViewResponse,
   KinopoiskApi$GetFilmResponse,
   KinopoiskApi$GetFilmsListResponse,
+  KinopoiskApi$GetNavigatorFilmsResponse,
   KinopoiskApi$GetSoonFilmsResponse,
   KinopoiskApi$GetGalleryResponse,
   KinopoiskApi$GetSearchInFilmsResponse,
   KinopoiskApi$GetStaffResponse,
 } from './types';
 import type {SearchQuery} from './filmIdFromRes';
+import type {NavigatorQuery} from './navigatorFilmInfoFromRes';
 
 class Kinopoisk {
   _connector: KinopoiskConnector;
@@ -87,6 +90,15 @@ class Kinopoisk {
     );
 
     return res ? soonFilmListFromRes(res) : null;
+  };
+
+  getNavigatorFilms = async (query: NavigatorQuery) => {
+    const res: ?KinopoiskApi$GetNavigatorFilmsResponse = await this._connector.apiGet(
+      'navigator',
+      query,
+    );
+
+    return res ? navigatorFilmInfoFromRes(res) : null;
   };
 
   getSupportedCountries = async () => {

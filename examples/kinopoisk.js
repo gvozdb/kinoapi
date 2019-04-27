@@ -20,9 +20,18 @@ const kinopoisk = new kinoApi.Kinopoisk();
     // console.log('kpMovieData', kpMovieData);
 
     // Get soon films
-    const kpSoonMovies = await kinopoisk.getSoonFilms();
-    console.log('kpSoonMovies.items', kpSoonMovies.items);
+    // const kpSoonMovies = await kinopoisk.getSoonFilms();
+    // console.log('kpSoonMovies.items', kpSoonMovies.items);
 
+    // Get navigator films
+    const kpNavigatorMovies = await kinopoisk.getNavigatorFilms({
+      type: 'film',
+      years: '2017:2018',
+      rating: '8:9',
+      order: 'year', // rating
+    });
+    console.log('kpNavigatorMovies.items', kpNavigatorMovies.items);
+    console.log('kpNavigatorMovies.pages', kpNavigatorMovies.pages);
   } catch (err) {
     err = err.message || err;
     err = (!err || err.match(/404/)) ? 'Movie not found' : err;
