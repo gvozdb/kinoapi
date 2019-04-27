@@ -309,7 +309,7 @@ const imdb = new Imdb({
     'tt2488496', // Star Wars: The Force Awakens
   );
   // 81
-});
+})();
 ```
 
 #### Trakt example
@@ -355,7 +355,7 @@ const trakt = new Trakt({
   //   comments: 122,
   //   lists: 26231,
   //   votes: 20715 }
-});
+})();
 ```
 
 ## License

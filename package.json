@@ -1,6 +1,6 @@
 {
   "name": "kinoapi",
-  "version": "0.15.0-beta",
+  "version": "0.15.1-beta",
   "description": "Get info for movies and TV shows",
   "repository": "gvozdb/kinoapi",
   "homepage": "https://github.com/gvozdb/kinoapi#readme",

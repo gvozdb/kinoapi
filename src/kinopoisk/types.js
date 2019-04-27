@@ -50,6 +50,21 @@ export type KinopoiskApi$FilmsListItem = {
   genre?: ?string,
   filmTypeText: 'Похожие фильмы',
 };
+export type KinopoiskApi$GetSoonFilmsItem = {
+  id: string,
+  type: KinopoiskApi$MovieType,
+  nameRU: string,
+  nameEN?: ?string,
+  description?: ?string,
+  posterURL?: ?string,
+  filmLength?: ?string,
+  year?: ?string,
+  country?: ?string,
+  genre?: ?string,
+  rating?: ?string,
+  ratingVoteCount?: ?string,
+  premiereRU?: string,
+};
 export type KinopoiskApi$Country = {
   countryID: string,
   countryName: string,
@@ -123,6 +138,10 @@ export type KinopoiskApi$GetGalleryResponse = {
 export type KinopoiskApi$GetFilmsListResponse = {
   class: 'KPFilmsList',
   items?: Array<KinopoiskApi$FilmsListItem>,
+};
+export type KinopoiskApi$GetSoonFilmsResponse = {
+  class: 'KPSoonFilms',
+  previewFilms?: Array<Array<KinopoiskApi$GetSoonFilmsItem>>,
 };
 export type KinopoiskApi$GetCountryViewResponse = {
   class: 'KPCountryView',

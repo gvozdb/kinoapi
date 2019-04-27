@@ -6,6 +6,7 @@ import filmGalleryFromRes from './filmGalleryFromRes';
 import filmIdFromRes from './filmIdFromRes';
 import filmInfoFromRes from './filmInfoFromRes';
 import filmInfoListFromRes from './filmInfoListFromRes';
+import soonFilmListFromRes from './soonFilmInfoFromRes';
 import KinopoiskConnector from './connector';
 import type {
   KinopoiskApi$Cinema,
@@ -17,6 +18,7 @@ import type {
   KinopoiskApi$GetCountryViewResponse,
   KinopoiskApi$GetFilmResponse,
   KinopoiskApi$GetFilmsListResponse,
+  KinopoiskApi$GetSoonFilmsResponse,
   KinopoiskApi$GetGalleryResponse,
   KinopoiskApi$GetSearchInFilmsResponse,
   KinopoiskApi$GetStaffResponse,
@@ -76,6 +78,15 @@ class Kinopoisk {
     );
 
     return res ? filmInfoListFromRes(res) : null;
+  };
+
+  getSoonFilms = async () => {
+    const res: ?KinopoiskApi$GetSoonFilmsResponse = await this._connector.apiGet(
+      'getKPSoonFilms',
+      {},
+    );
+
+    return res ? soonFilmListFromRes(res) : null;
   };
 
   getSupportedCountries = async () => {

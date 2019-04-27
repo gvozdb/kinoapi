@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.15.1"></a>
+## 0.15.1-beta (2019-04-27)
+
+
+### Features
+
+* Added examples
+* **kinopoisk:** add `getSoonFilms`
+
+
+
+<a name="0.15.0"></a>
+## 0.15.0-beta (2019-04-27)
+
+
+### Features
+
+* Project renamed
+* **kinopoisk:** constant `KINOPOISK_REQUEST_HEADERS_API_URL` changed
+
+
+
 <a name="0.14.4"></a>
 ## [0.14.4](https://github.com/anvilabs/movie-api/compare/v0.14.3...v0.14.4) (2016-12-21)
 

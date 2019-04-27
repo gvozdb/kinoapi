@@ -31,6 +31,7 @@ type Endpoint =
   | 'getKPNewsDetail'
   // Coming soon
   | 'getKPSoonFilms'
+  | 'getKPSoonFilms'
   | 'getKPSoonDVD'
   | 'getDatesForSoonFilms'
   | 'getDatesForSoonDVD'
