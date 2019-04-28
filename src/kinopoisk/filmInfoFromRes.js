@@ -9,8 +9,13 @@ import type {
 // eslint-disable-next-line complexity
 const filmInfoFromRes = (res: KinopoiskApi$GetFilmResponse) => {
   const ratingData = res.ratingData || {};
+  const types = {
+    KPFilm: 'film',
+    KPSerial: 'serial',
+  };
 
   return {
+    type: types[res.type],
     kpId: parseInt(res.filmID, 10),
     title: res.nameRU || '',
     originalTitle: res.nameEN || '',
@@ -43,6 +48,7 @@ const filmInfoFromRes = (res: KinopoiskApi$GetFilmResponse) => {
       .map(({preview}: KinopoiskApi$GalleryItem) =>
         imageUrlFromPath(preview.replace('kadr/sm_', 'kadr/')),
       ),
+    kpTrailer: res.videoURL || {},
   };
 };
 

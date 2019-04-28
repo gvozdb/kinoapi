@@ -99,6 +99,7 @@ export type KinopoiskApi$GetStaffResponse = {
  *
  */
 export type KinopoiskApi$GetFilmResponse = {
+  type: KinopoiskApi$MovieType,
   bigPosterURL?: ?string,
   country?: ?string,
   description?: ?string,
@@ -113,8 +114,8 @@ export type KinopoiskApi$GetFilmResponse = {
   ratingData?: ?KinopoiskApi$RatingData,
   ratingMPAA?: ?string,
   slogan?: ?string,
-  type: KinopoiskApi$MovieType,
   webURL: string,
+  videoURL?: ?Object,
   year?: ?string,
 };
 
